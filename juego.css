@@ -1,0 +1,27 @@
+body,html{
+    background-color: rgb(254, 254, 134);
+    height: 100px;
+}
+
+main{
+    position: fixed;
+    width: 200px;
+    height: auto;
+    bottom: 10px;
+    left: 100px;
+}
+
+.cuadrado{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    
+}
+
+#bola{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    justify-content: center;
+}
