@@ -3,12 +3,13 @@ cuadrado.innerHTML = `
 <style>
     
 .cuadrado{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 30px;
     background-color: aqua;
     position:absolute;
     bottom:50px;
-    left:50px
+    left:50px;
+    transition: transform 1s linear;
 }
 
 </style>
@@ -18,7 +19,6 @@ cuadrado.innerHTML = `
 `;
 
 
-//definir clase de bola
 class CuadradoWebComponent extends HTMLElement{
     constructor(){
         super();
@@ -26,7 +26,32 @@ class CuadradoWebComponent extends HTMLElement{
         this.attachShadow({mode:'open'});
 
         this.shadowRoot.append(cuadrado.content.cloneNode(true));
+        
+        this.direccion = 'right';
+        
+        setInterval(() => {
+            this.moverCuadrado();
+        }, 20);
+    }
+    
+    moverCuadrado() {
+        const cuadradoElement = this.shadowRoot.querySelector('.cuadrado');
+        
+        const izquierda = parseInt(cuadradoElement.style.left) || 0;
+        
+
+        if (this.direccion === 'right') {
+            cuadradoElement.style.left = `${izquierda + 10}px`;
+            if (izquierda + 100 >= window.innerWidth) { 
+                this.direccion = 'left';
+            }
+        } else {
+            cuadradoElement.style.left = `${izquierda - 10}px`;
+            if (izquierda <= 0) { 
+                this.direccion = 'right';
+            }
+        }
     }
 }
 
-customElements.define('cuadrado-web',CuadradoWebComponent);
+customElements.define('cuadrado-web', CuadradoWebComponent);

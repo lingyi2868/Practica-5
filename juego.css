@@ -3,20 +3,7 @@ body,html{
     height: 100px;
 }
 
-main{
-    position: fixed;
-    width: 200px;
-    height: auto;
-    bottom: 10px;
-    left: 100px;
-}
 
-.cuadrado{
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
-    
-}
 
 /* #bola{
     width: 50px;
