@@ -1,4 +1,4 @@
-const cuadrado = cuadrado.createElement("template");
+const cuadrado = document.createElement("template");
 cuadrado.innerHTML = `
 <style>
     
@@ -6,7 +6,9 @@ cuadrado.innerHTML = `
     width: 100px;
     height: 100px;
     background-color: aqua;
-    
+    position:absolute;
+    bottom:50px;
+    left:50px
 }
 
 </style>
